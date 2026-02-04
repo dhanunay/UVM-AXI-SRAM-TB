@@ -9,7 +9,6 @@ function new(string name="axi_wr_monitor",uvm_component parent =null);
  super.new(name,parent);
 endfunction
     
-    
 function void build_phase(uvm_phase phase);
   mon_ap = new("mon_ap",this);
   if(! uvm_config_db#(virtual axi4_intf)::get(this, "", "axi_intf",mif ))
@@ -75,3 +74,4 @@ endtask
 endclass
 
     
+
