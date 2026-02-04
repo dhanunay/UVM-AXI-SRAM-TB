@@ -127,12 +127,10 @@ endfunction
   task  sram_read( );
     logic [DATA_WIDTH-1:0] dout;
     for(int unsigned i =0;i< rd_tx.arlen+1'b1;i++) begin 
-      
       if(i==0) begin
         rout = mem[rd_tx.araddr[ADDR_WIDTH-1:$clog2(STROBE_WIDTH)]];
         dout  = rd_tx.rdata[i];
         `uvm_info("rout", $sformatf("Rout %0h  - %0h",rd_tx.araddr,rout  ),UVM_HIGH)   
-
         if( rout == dout )   begin 
           m_matches++;
           `uvm_info(get_type_name, $sformatf("Reference out  %0h  and DUT out %0h matches for addr %0h ",rout,dout, rd_tx.araddr),UVM_MEDIUM)
@@ -141,7 +139,6 @@ endfunction
           `uvm_error(get_type_name,$sformatf("score boarad Mismatch  for   Addr - %0h  Expected %0h   recieved %0h ", rd_tx.araddr,rout,dout)) 
         end 
       end//if
-      
       else begin
         addr_r = aligned_address_value_rd + (i) *(num_bytes_rd);
       //  `uvm_info("alughed addr r", $sformatf(" addr_r  %0h for %0h ",addr_r,i ),UVM_LOW)
@@ -198,12 +195,10 @@ endfunction
         
 virtual function void check_phase(uvm_phase phase);
   `uvm_info(get_type_name, $sformatf("\n ----------------   Check phase    ---------------------\n \t \t The number of Bytes Matches %0d  Mismatches %0d",   m_matches,m_mismatches ),UVM_NONE)
-  
 endfunction
   
-  
-
 endclass
+
 
 
 
