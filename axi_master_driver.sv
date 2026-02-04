@@ -128,8 +128,6 @@ foreach(req.wdata[i,j])
     assert ( (l_awaddr%num_bytes) == 0) else
       `uvm_error("WRAP_ADDR_ERR", $sformatf(" the address  %0h was not aligned to awsize  %0h",l_awaddr,req.awsize ))
   end 
-        
-      axi_func_pkg::wrap_display( req.awid, l_awaddr,req.awsize,i);
  
   assert ( lower_byte_lane <= upper_byte_lane) 
 	else `uvm_error(get_type_name, $sformatf(" lower_byte_lane  = %0d upper_byte_lane = %0d   ", lower_byte_lane, upper_byte_lane));
@@ -167,3 +165,4 @@ end //for
 endtask
 
 endclass
+
