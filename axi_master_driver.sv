@@ -92,9 +92,9 @@ task  write_data_phase(axi_wr_tx req);
  		 lower_wrap_boundry_num = axi_func_pkg::lower_wrap_boundry( req.awaddr,req.awsize,req.awlen);
   		 upper_wrap_boundry_num = axi_func_pkg::upper_wrap_boundry( req.awaddr,req.awsize,req.awlen);
    end 
-  
+   // The no of wtsrb lanes for entire burst
     required_countones = length*num_bytes  - (l_awaddr%num_bytes); //offset account for unaligned transfer
- 
+     
 foreach(req.wdata[i,j])
 	tmp_data[i][j*8 +: 8] = req.wdata[i][j];
 
@@ -162,6 +162,7 @@ end //for
 endtask
 
 endclass
+
 
 
 
