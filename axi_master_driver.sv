@@ -99,7 +99,6 @@ foreach(req.wdata[i,j])
 	tmp_data[i][j*8 +: 8] = req.wdata[i][j];
 
   for(int unsigned i = 0;i<length;i++) begin
-  
  if(i==0) 
  begin
     l_awaddr = req.awaddr;
@@ -116,7 +115,6 @@ foreach(req.wdata[i,j])
          l_awaddr = lower_wrap_boundry_num;
             upper_wrap_conition_occured =1;
        end
-     
    end  //wrap
    axi_func_pkg::byte_lane_n( l_awaddr,num_bytes,data_bus_bytes,lower_byte_lane,upper_byte_lane);
   end
@@ -164,5 +162,6 @@ end //for
 endtask
 
 endclass
+
 
 
