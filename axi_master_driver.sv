@@ -15,7 +15,6 @@ endfunction
 task handle_reset();
 wait(vif.rst);
 wait(!vif.rst);
-
 endtask
 
 virtual task run_phase(uvm_phase phase);
@@ -165,4 +164,5 @@ end //for
 endtask
 
 endclass
+
 
