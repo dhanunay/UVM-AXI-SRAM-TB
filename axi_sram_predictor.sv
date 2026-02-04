@@ -93,7 +93,6 @@ function void write_rd_agent(input axi_rd_tx  rhs_);
  `uvm_info(get_type_name,$sformatf(" _REad_agent    \n   %s ",rd_tx.sprint() ),UVM_LOW )
   aligned_address_value_rd =  axi_func_pkg::aligned_address(rd_tx.araddr, 1<<rd_tx.arsize); 
   num_bytes_rd = (1<<rd_tx.arsize);
-
   read = 1;
 endfunction
   
@@ -205,6 +204,7 @@ endfunction
   
 
 endclass
+
 
 
 
