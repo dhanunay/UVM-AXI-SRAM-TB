@@ -66,18 +66,10 @@ virtual task body();
   m_rd_seq = axi_rd_seq::type_id::create("m_rd_seq");
   
       m_wr_seq.start(p_sequencer.m_write_seqr);
-       m_rd_seq.start(p_sequencer.m_read_seqr);
+      m_rd_seq.start(p_sequencer.m_read_seqr);
 
-  
-//   fork
-//     m_wr_seq.start(p_sequencer.m_write_seqr);
-//     begin
-//    #200;
-//       m_rd_seq.start(p_sequencer.m_read_seqr);
-//     end 
-//   join
-  
 endtask
   
 endclass
+
     
