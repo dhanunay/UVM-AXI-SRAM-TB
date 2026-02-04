@@ -52,9 +52,7 @@ function void predict_wstrb(
                 current_addr = current_addr - total_bytes; 
             end
         end
-
            beat_strb = 0;
-
         for (int i = 0; i < num_bytes; i++) begin
             byte_addr = current_addr + i;
 
@@ -67,8 +65,6 @@ function void predict_wstrb(
         expected_wstrb_array[beat] = beat_strb;
     end
 endfunction
-
-
   
 function new(string name="axi_sram_predictor",uvm_component parent =null);
  super.new(name,parent);
@@ -212,3 +208,4 @@ endfunction
   
 
 endclass
+
