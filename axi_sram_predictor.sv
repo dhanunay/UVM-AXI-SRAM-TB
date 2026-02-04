@@ -115,12 +115,9 @@ endfunction
         end//for
       end 
        else begin   
-        
         addr =  aligned_address_value_wr  + (i) *(num_bytes_wr);
         `uvm_info("alinged addr write", $sformatf(" write addrr  %0h for %0h ",addr,i ),UVM_DEBUG)
-
         for(int  unsigned j=0;j<STROBE_WIDTH;j++) begin
-          
           if (expected_wstrb_array[i][j]) begin
                  mem[addr[ADDR_WIDTH-1:$clog2(STROBE_WIDTH)]][j*8 +: 8]  = wr_tx.wdata[i][j];
                 `uvm_info(" sram_write-N", $sformatf("writing data at %0h   -- %0h",addr, mem[addr[15:2]][j*8 +: 8]  ),UVM_HIGH)
@@ -128,7 +125,6 @@ endfunction
            end 
         end 
     end 
-        
       end 
     write_expected++;
     write = 0; 
@@ -214,4 +210,5 @@ virtual function void check_phase(uvm_phase phase);
 endfunction
   
   
+
 endclass
