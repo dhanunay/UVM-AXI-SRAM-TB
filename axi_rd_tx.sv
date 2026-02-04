@@ -17,7 +17,6 @@ class axi_rd_tx extends uvm_sequence_item;
 	super.new(name);
 endfunction
   
-  
 function void pre_ramdomize();
   `uvm_info("pre",$sformatf("   pre val  %p ",ar_s),UVM_LOW  )
 endfunction
@@ -45,4 +44,5 @@ endfunction
   `uvm_field_array_int(rlast,UVM_ALL_ON)
 `uvm_object_utils_end
   
+
 endclass
