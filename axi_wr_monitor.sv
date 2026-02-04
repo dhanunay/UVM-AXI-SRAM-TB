@@ -30,20 +30,14 @@ handle_reset();
 fork 
 axi_wr_txn(); 
 join_none
-
 endtask
   
-  //monitor aw channel
-  //   w channel 
-  // ar channel
   task axi_wr_txn(); 
  forever begin
      tx = axi_wr_tx::type_id::create($sformatf("monitor_wr_tx_%0d",tx_count));
-
   fork 
       monitor_aw_channel();
       monitor_w_channel();
-    
   join
    `uvm_info(get_type_name,$sformatf("monitor_wr_tx_  %s", tx.sprint()),UVM_HIGH)
   // $cast(tx_copy, tx.clone()); 
@@ -51,8 +45,6 @@ endtask
    tx_count++;
  end 
 endtask
-  
-  
   
 task monitor_aw_channel();
   @(posedge mif.clk iff(mif.awvalid  && mif.awready));
@@ -92,4 +84,5 @@ task monitor_w_channel();
   endtask  
   
 endclass
+
 
