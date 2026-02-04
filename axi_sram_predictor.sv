@@ -99,7 +99,6 @@ endfunction
   
   task sram_write();
     for(int unsigned i=0; i<wr_tx.awlen+1'b1; i++) begin 
-      
       if(i==0) begin
         addr0 = wr_tx.awaddr;
         for(int unsigned j=0;j<STROBE_WIDTH;j++) begin
@@ -118,10 +117,10 @@ endfunction
                  mem[addr[ADDR_WIDTH-1:$clog2(STROBE_WIDTH)]][j*8 +: 8]  = wr_tx.wdata[i][j];
                 `uvm_info(" sram_write-N", $sformatf("writing data at %0h   -- %0h",addr, mem[addr[15:2]][j*8 +: 8]  ),UVM_HIGH)
                  addr = addr + 1;
-           end 
-        end 
-    end 
-      end 
+             end 
+          end 
+       end 
+     end 
     write_expected++;
     write = 0; 
  endtask
@@ -208,5 +207,6 @@ endfunction
   
 
 endclass
+
 
 
