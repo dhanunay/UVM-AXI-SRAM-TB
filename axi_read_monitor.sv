@@ -58,8 +58,7 @@ handle_reset();
  fork 
    read_monitor();
  join_none
-endtask
-   
+endtask   
   
 task read_monitor();
   forever begin 
@@ -74,4 +73,5 @@ task read_monitor();
 endtask 
   
 endclass
+
     
