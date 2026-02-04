@@ -4,7 +4,6 @@ interface axi4_intf#(
 	parameter ID_WIDTH= 12)
 (input logic clk, input logic rst);
 
-
 // write address channels 
 
  logic [ID_WIDTH-1:0]  awid;
@@ -17,7 +16,6 @@ interface axi4_intf#(
  logic [0:0]  awvalid;
  logic [0:0]  awready;
  
- 
  // write data channel
  
  logic [ID_WIDTH-1:0] wid;
@@ -27,7 +25,6 @@ interface axi4_intf#(
  logic [0:0] wvalid;
  logic [0:0] wready;
  
- 
  /// write response channel
  logic [ID_WIDTH-1:0] bid;
  logic [1:0] bresp;
@@ -35,7 +32,6 @@ interface axi4_intf#(
  logic [0:0] bready;
  
  // Read address channel
- 
  
  logic [ID_WIDTH-1:0]  arid;
  logic [ADDRESS_WIDTH-1:0] araddr;
@@ -47,10 +43,7 @@ interface axi4_intf#(
  logic [0:0] arvalid;
  logic [0:0] arready;
  
- 
- 
  // Read write channel
- 
  
  logic [ID_WIDTH-1:0]  rid;
  logic [DATA_WIDTH-1:0] rdata;
@@ -59,8 +52,9 @@ interface axi4_intf#(
  logic [0:0] rvalid;
  logic [0:0] rready;
  
-   // addtional signals 
+ // addtional signals 
   
   logic four_4Kb_voilation;
+
 
  endinterface
