@@ -20,7 +20,7 @@ endfunction
 function void pre_ramdomize();
   `uvm_info("pre",$sformatf("   pre val  %p ",ar_s),UVM_LOW  )
 endfunction
-  
+	
   constraint rd_c {
       arid    == ar_s.awid;
       araddr  == ar_s.awaddr;
@@ -46,3 +46,4 @@ endfunction
   
 
 endclass
+
