@@ -1,15 +1,8 @@
-
-
-// import uvm_pkg::*;
-// `include "uvm_macros.svh"
 `include "axi4_intf.sv"
 import axi_tb_pkg::*;
 
-
 module tb_top;
-
 logic clk,rst;
-  
 initial begin 
 clk = 1'b0;
 forever  #5 clk = ~clk;
@@ -65,10 +58,6 @@ end
    .s_axi_rvalid(intf_.rvalid),
    .s_axi_rready(intf_.rready)
 );
-
-
-
-
 
 initial begin
 $dumpfile("axi_sram.vcd");
