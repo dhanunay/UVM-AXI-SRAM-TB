@@ -24,11 +24,5 @@ import axi_func_pkg::*;
 
 `include "axi_env.sv"
 `include "axi_tests.sv"
-
-
-
-
-
-
-
+  
 endpackage
