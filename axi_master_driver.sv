@@ -69,7 +69,7 @@ endtask
 
 
 task  write_data_phase(axi_wr_tx req);
-  bit[32-1:0] tmp_data[];
+  bit[DATA_WIDTH-1:0] tmp_data[];
   int length;
   bit four_Kb_voilation;
   logic [7-1:0] num_bytes;  //()
@@ -162,6 +162,7 @@ end //for
 endtask
 
 endclass
+
 
 
 
