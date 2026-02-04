@@ -12,14 +12,12 @@ m_env = axi_env::type_id::create("m_env",this);
 endfunction
 
 virtual task run_phase(uvm_phase phase);
-v_seq = axi_virtual_sequence::type_id::create("v_seq");
-phase.raise_objection(this);
-  v_seq.start(m_env.m_virtual_sequencer);
-phase.drop_objection(this);
-  `uvm_info(" phase objection dropped", $sformatf("  phase objection dropped "),UVM_LOW)    
-
+ v_seq = axi_virtual_sequence::type_id::create("v_seq");
+ phase.raise_objection(this);
+ v_seq.start(m_env.m_virtual_sequencer);
+ phase.drop_objection(this);
+`uvm_info(" phase objection dropped", $sformatf("  phase objection dropped "),UVM_LOW)    
 //  phase.phase_done.set_drain_time(this,500);
-
 endtask
 endclass
   
@@ -42,4 +40,5 @@ endfunction
 endclass
 
   
+
   
