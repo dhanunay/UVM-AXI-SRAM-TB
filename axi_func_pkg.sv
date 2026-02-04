@@ -26,21 +26,14 @@ endfunction
 endfunction
 
 
-function logic [ADDR_WIDTH-1:0] lower_wrap_boundry(input logic[32-1:0] awaddr, input [2:0] awsize ,input logic [8-1:0] awlen );
+function logic [ADDR_WIDTH-1:0] lower_wrap_boundry(input logic[ADDR_WIDTH-1:0] awaddr, input [2:0] awsize ,input logic [8-1:0] awlen );
   return (awaddr/((1'b1<<awsize)*(awlen+1'b1))) * ((1'b1<<awsize)*(awlen+1'b1));
 endfunction
 
 
-function logic [ADDR_WIDTH-1:0] upper_wrap_boundry(input logic[32-1:0] awaddr, input [2:0] awsize,input logic [8-1:0] awlen );
+function logic [ADDR_WIDTH-1:0] upper_wrap_boundry(input logic[ADDR_WIDTH-1:0] awaddr, input [2:0] awsize,input logic [8-1:0] awlen );
   return   lower_wrap_boundry(awaddr,awsize,awlen)  +  ((1'b1<<awsize)*(awlen+1'b1));
 endfunction
 
-function void wrap_display(  input logic [9:0] id,  input logic[32-1:0] awaddr,  input logic [2:0] awsize,int beat_num );
-  
-endfunction
-
-
-
-
-
 endpackage
+
