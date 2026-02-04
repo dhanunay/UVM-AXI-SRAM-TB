@@ -21,7 +21,6 @@ endfunction
     logic [ADDR_WIDTH-1:0] start_address;
 	start_address=  awaddr;
 	lower_byte_lane = start_address -   (start_address/data_bus_bytes)* data_bus_bytes;
-
 	upper_byte_lane = lower_byte_lane + num_bytes -1;
 endfunction
 
@@ -36,4 +35,5 @@ function logic [ADDR_WIDTH-1:0] upper_wrap_boundry(input logic[ADDR_WIDTH-1:0] a
 endfunction
 
 endpackage
+
 
