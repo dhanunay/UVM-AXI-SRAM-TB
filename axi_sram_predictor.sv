@@ -181,10 +181,10 @@ endfunction
   endtask
   
   task wait_for_read_to_complete( uvm_phase phase);
-  `uvm_info("INSIDE wait_for_read_to_complete ","",UVM_LOW)
+    `uvm_info("INSIDE wait_for_read_to_complete ","",UVM_LOW)
     `uvm_info("End run phase", $sformatf("  expected   %0d  actual   %0d  ",write_expected,  read_completed ),UVM_LOW) 
-  wait(write_expected  == read_completed );
-  phase.drop_objection(this," ok to end phase");
+    wait(write_expected  == read_completed );
+    phase.drop_objection(this," ok to end phase");
   endtask
   
   function void phase_ready_to_end(uvm_phase phase);
@@ -207,6 +207,7 @@ endfunction
   
 
 endclass
+
 
 
 
