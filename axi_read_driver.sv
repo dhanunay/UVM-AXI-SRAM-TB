@@ -46,7 +46,7 @@ endtask
 task read_addr_phase();
   forever begin 
   seq_item_port.get_next_item(req);
-  `uvm_info(get_type_name,$sformatf("Got  Read Addr phase stimiulus \n\t  %s",req.sprint),UVM_HIGH)
+	  `uvm_info(get_type_name,$sformatf("Got  Read Addr phase stimulus \n\t  %s",req.sprint),UVM_HIGH)
   vif.arid <= req.arid;
   vif.araddr  <= req.araddr;
   vif.arlen  <= req.arlen;
@@ -65,5 +65,6 @@ task read_addr_phase();
   end
 endtask
 endclass
+
 
   
