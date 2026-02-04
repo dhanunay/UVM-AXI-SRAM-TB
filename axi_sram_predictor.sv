@@ -125,8 +125,6 @@ endfunction
     write = 0; 
  endtask
   
-  
-  
   task  sram_read( );
     logic [DATA_WIDTH-1:0] dout;
     for(int unsigned i =0;i< rd_tx.arlen+1'b1;i++) begin 
@@ -207,6 +205,7 @@ endfunction
   
 
 endclass
+
 
 
 
