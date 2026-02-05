@@ -97,7 +97,10 @@ task  write_data_phase(axi_wr_tx req);
      
 foreach(req.wdata[i,j])
 	tmp_data[i][j*8 +: 8] = req.wdata[i][j];
-
+	
+ if(req.awburst == FIXED)
+    `uvm_fatal(get_type_name, "Fixed Burst not supported")
+	
   for(int unsigned i = 0;i<length;i++) begin
  if(i==0) 
  begin
@@ -162,6 +165,7 @@ end //for
 endtask
 
 endclass
+
 
 
 
