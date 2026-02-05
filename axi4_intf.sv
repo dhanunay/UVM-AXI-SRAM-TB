@@ -18,7 +18,6 @@ interface axi4_intf#(
  
  // write data channel
  
- logic [ID_WIDTH-1:0] wid;
  logic [DATA_WIDTH-1:0] wdata;
  logic [(DATA_WIDTH/8)-1 :0] wstrb;
  logic [0:0] wlast;
@@ -56,5 +55,29 @@ interface axi4_intf#(
   
   logic four_4Kb_voilation;
 
+assert property (@(posedge clk) disable iff(!rst)  (awvalid &&(!awready))  |=> $stable(awaddr) );
+assert property (@(posedge clk) disable iff(!rst)  (awvalid &&(!awready))  |=> $stable(awlen) );
+assert property (@(posedge clk) disable iff(!rst)  (awvalid &&(!awready))  |=> $stable(awsize) );
+assert property (@(posedge clk) disable iff(!rst)  (awvalid &&(!awready))  |=> $stable(awburst));
+
+assert property (@(posedge clk) disable iff(!rst)  (wvalid &&(!wready))  |=> $stable(wdata) );
+assert property (@(posedge clk) disable iff(!rst)  (wvalid &&(!wready))  |=> $stable(wstrb) );
+assert property (@(posedge clk) disable iff(!rst)  (wvalid &&(!wready))  |=> $stable(wlast) );
+
+assert property (@(posedge clk) disable iff(!rst)  (bvalid &&(bready))  |=> $stable(bid) );
+assert property (@(posedge clk) disable iff(!rst)  (bvalid &&(bready))  |=> $stable(bresp) );
+
+assert property (@(posedge clk) disable iff(!rst)  (arvalid &&(!arready))  |=> $stable(araddr));
+assert property (@(posedge clk) disable iff(!rst)  (arvalid &&(!arready))  |=> $stable(arlen) );
+assert property (@(posedge clk) disable iff(!rst)  (arvalid &&(!arready))  |=> $stable(arsize));
+assert property (@(posedge clk) disable iff(!rst)  (arvalid &&(!arready))  |=> $stable(arburst));
+  
+assert property (@(posedge clk) disable iff(!rst)  rvalid && (!rready)  |=> $stable(rid) );
+assert property (@(posedge clk) disable iff(!rst)  rvalid && (!rready)  |=> $stable(rdata));
+assert property (@(posedge clk) disable iff(!rst)  rvalid && (!rready)  |=> $stable(rresp));
+assert property (@(posedge clk) disable iff(!rst)  rvalid && (!rready)  |=> $stable(rlast));
+
+
 
  endinterface
+
