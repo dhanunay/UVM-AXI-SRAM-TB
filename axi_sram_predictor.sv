@@ -194,10 +194,11 @@ endfunction
   endfunction
         
 virtual function void check_phase(uvm_phase phase);
-  `uvm_info(get_type_name, $sformatf("\n ----------------   Check phase    ---------------------\n \t \t The number of Bytes Matches %0d  Mismatches %0d",   m_matches,m_mismatches ),UVM_NONE)
+  `uvm_info(get_type_name, $sformatf("\n ----------------   Check phase    ---------------------\n \t \t The number of Beats Matches %0d  Mismatches %0d",   m_matches,m_mismatches ),UVM_NONE)
 endfunction
   
 endclass
+
 
 
 
