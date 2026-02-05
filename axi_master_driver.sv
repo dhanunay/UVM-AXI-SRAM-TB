@@ -131,7 +131,7 @@ foreach(req.wdata[i,j])
  
   assert ( lower_byte_lane <= upper_byte_lane) 
 	else `uvm_error(get_type_name, $sformatf(" lower_byte_lane  = %0d upper_byte_lane = %0d   ", lower_byte_lane, upper_byte_lane));
- vif.wid    <= req.awid;
+ 
  vif.wdata  <=  tmp_data[i] ;
  vif.wlast   <= (i==(length-1'b1) )? 1'b1: 1'b0 ;
 
@@ -165,6 +165,7 @@ end //for
 endtask
 
 endclass
+
 
 
 
