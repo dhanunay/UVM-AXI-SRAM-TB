@@ -1,4 +1,3 @@
-Ongoing Development.....
 
 Axi sram with OUT outstanding transactions 
 
