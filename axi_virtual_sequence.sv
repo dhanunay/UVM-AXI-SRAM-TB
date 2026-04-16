@@ -48,8 +48,8 @@ class axi_virtual_sequence extends uvm_sequence;
 
 axi_wr_seq 			  m_wr_seq;
 axi_rd_seq  	      m_rd_seq;
-axi_wr_sequencer      m_write_seqr;
-axi_rd_sequencer      m_read_seqr;
+//axi_wr_sequencer      m_write_seqr;
+//axi_rd_sequencer      m_read_seqr;
   
  `uvm_declare_p_sequencer(axi_virtual_sequencer)
   
