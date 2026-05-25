@@ -64,8 +64,8 @@ assert property (@(posedge clk) disable iff(rst)  (wvalid &&(!wready))  |=> $sta
 assert property (@(posedge clk) disable iff(rst)  (wvalid &&(!wready))  |=> $stable(wstrb) );
 assert property (@(posedge clk) disable iff(rst)  (wvalid &&(!wready))  |=> $stable(wlast) );
 
-assert property (@(posedge clk) disable iff(rst)  (bvalid &&(bready))  |=> $stable(bid) );
-assert property (@(posedge clk) disable iff(rst)  (bvalid &&(bready))  |=> $stable(bresp) );
+assert property (@(posedge clk) disable iff(rst)  (bvalid &&(!bready))  |=> $stable(bid) );
+assert property (@(posedge clk) disable iff(rst)  (bvalid &&(!bready))  |=> $stable(bresp) );
 
 assert property (@(posedge clk) disable iff(rst)  (arvalid &&(!arready))  |=> $stable(araddr));
 assert property (@(posedge clk) disable iff(rst)  (arvalid &&(!arready))  |=> $stable(arlen) );
