@@ -16,7 +16,7 @@ logic [DATA_WIDTH-1:0] rout;
 logic [ADDR_WIDTH-1:0] aligned_addr,addr0, addr,addr_r, aligned_address_value_wr,   aligned_address_value_rd;
 bit [STROBE_WIDTH-1:0] expected_wstrb_array [];
 
-//AI generated function
+//AI generated function starts
 function void predict_wstrb(
     bit [ADDR_WIDTH-1:0] awaddr,
     bit [7:0]            awlen,
@@ -65,6 +65,7 @@ function void predict_wstrb(
         expected_wstrb_array[beat] = beat_strb;
     end
 endfunction
+  //AI generated function ends
   
 function new(string name="axi_sram_predictor",uvm_component parent =null);
  super.new(name,parent);
