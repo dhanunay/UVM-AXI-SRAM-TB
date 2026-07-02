@@ -58,9 +58,6 @@ function new(string name = "axi_virtual_sequence");
 	super.new(name);
 endfunction
 
-virtual function void build_phase(uvm_phase);
-endfunction
-
 virtual task body();
   m_wr_seq = axi_wr_seq::type_id::create("m_wr_seq");
   m_rd_seq = axi_rd_seq::type_id::create("m_rd_seq");
