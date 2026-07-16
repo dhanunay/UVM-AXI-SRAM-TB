@@ -11,7 +11,7 @@ Predictor uses AI generated wstsrb calculations ("predict_wstrb" function)to com
 '''
 waveform
 '''
-<img width="3420" height="2214" alt="image" src="https://github.com/user-attachments/assets/e9811f02-1ef7-41c0-a496-ed3d5b143ac1" />
+<img width="1707" height="1015" alt="Screenshot 2026-07-16 at 12 35 02 PM" src="https://github.com/user-attachments/assets/013ed52c-1347-4cac-b6ce-65d9f8e800ef" />
 
 
 
