@@ -15,7 +15,7 @@ waveform
 
 
 ''' 
-run log '''
+run log 
 
 1//etc/uvm-1.2/src/seq/uvm_seq.svh'.
 
@@ -3931,3 +3931,4 @@ Time: 5320 ns
 CPU Time:      1.020 seconds;       Data structure size:   0.6Mb
 Thu Jul 16 02:54:48 2026
 
+'''
