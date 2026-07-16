@@ -7,14 +7,13 @@ supports INCR and WRAP Burst
 
 
 Predictor uses AI generated wstsrb calculations ("predict_wstrb" function)to comapare Manually  written driver wstrb calculations
-
-'''
+```
 waveform
-'''
+```
 <img width="1707" height="1015" alt="Screenshot 2026-07-16 at 12 35 02 PM" src="https://github.com/user-attachments/assets/013ed52c-1347-4cac-b6ce-65d9f8e800ef" />
 
 
-''' 
+```
 run log 
 
 1//etc/uvm-1.2/src/seq/uvm_seq.svh'.
@@ -3931,4 +3930,4 @@ Time: 5320 ns
 CPU Time:      1.020 seconds;       Data structure size:   0.6Mb
 Thu Jul 16 02:54:48 2026
 
-'''
+```
